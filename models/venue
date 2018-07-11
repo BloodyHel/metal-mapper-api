@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
-
-const venueSchema = new mongoose.Schema({
-  rating: { type: String, require: true },
+const Schema = mongoose.Schema;
+const venueSchema = new Schema({
+  name: { type: String, require: true },
+  city: { type: String, require: true },
+  address: { type: String, require: true },
+  genre: { type: String, require: true },
+  rating: { type: Number, require: true },
 });
 
-const PropertyListingModel = mongoose.model('ProperyListing', PropertyListingSchema);
+const VenueListingModel = mongoose.model('VenueListing', VenueListingSchema);
 
-module.exports = PropertyListingModel;
+module.exports = mongoose.model('VenueListing', VenueListingSchema);
+
